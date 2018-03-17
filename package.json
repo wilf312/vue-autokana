@@ -1,0 +1,19 @@
+{
+  "name": "vue-autokana",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilf312/vue-autokana.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilf312/vue-autokana/issues"
+  },
+  "homepage": "https://github.com/wilf312/vue-autokana#readme"
+}
