@@ -2,6 +2,7 @@ var path = require('path')
 var entry = process.env.NODE_ENV === 'production' ? './build/prod.js' : './build/dev.js'
 var webpack = require('webpack')
 var projectRoot = path.resolve(__dirname, './')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   entry: entry,
@@ -61,7 +62,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -78,12 +82,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
